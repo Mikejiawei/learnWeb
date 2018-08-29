@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>相册</title>
+</head>
+<body>
+    <h2>logo画廊</h2>
+
+    <div id="imagegallery">
+        <a href="images/a.jpg" title="logoA">
+            <img src="images/coffee.png" width="80" alt="logo1" />
+        </a>
+        <a href="images/b.jpg" title="logoB">
+            <img src="images/github.png" width="80" alt="logo2" />
+        </a>
+        <a href="images/c.jpg" title="logoC">
+            <img src="images/python.png" width="80" alt="logo3" />
+        </a>
+    </div>
+
+    <div style="clear:both"></div>
+
+    <img id="image" src="images/placeholder.jpg" alt="" width="450px" />
+
+    <p id="des">选择一个图片</p>
+
+    <script>
+        // 1 获取所有的a标签 对应的元素
+        var imagegallery = document.getElementById('imagegallery');
+        var links = imagegallery.getElementsByTagName('a');
+        // 2 给所有的a元素注册点击事件
+        // for (let i = 0,len = links.length; i < len; i++) {
+            
+        // }
+
+        var i = 0, len = links.length;
+        for(;i<len;i++ ) {
+            var link = links[i];
+            link.onclick = function(){
+                // 3 切换图片和文字
+                var image = document.getElementById('image');
+                var des = document.getElementById('des');
+                //设置图片
+                image.src = this.href;
+                //设置文字
+                des.innerText = this.title;
+                // 取消默认行为的执行
+                return false;
+            }
+        }
+    
+    
+    </script>
+    
+</body>
+</html>

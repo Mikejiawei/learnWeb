@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Select</title>
+    <script>
+        //get 获取 Element 元素 ById 根据Id
+        //如果id不存在，返回null
+    </script>
+</head>
+<body>
+    <div>hello</div>
+    <div id="box">world</div>
+    <div class="a">1111</div>
+    <div class="a">2222</div>
+    <div class="b">3333</div>
+    <form  id="form" action="1.php">
+        <input type="text" name="name"><br>
+        <input type="text" name="pwd"><br>
+        <input type="radio" name="sex"><br>
+        <input type="radio" name="sex"><br>
+        <input type="submit" value="登陆">
+    </form>
+
+    <script>
+        //第一种
+        var box = document.getElementById('box');
+        //输出的是元素对应的标签的内容
+        //console.log(box);
+        //打印对象
+        console.dir(box);
+        //认为构造函数就是对象的类型
+        console.log(box.constructor);   //HTMLDivElement
+
+        //第二种
+        var divs = document.getElementsByTagName('div');
+        console.log(divs);  //HTMLCollection 元素的集合 伪数组
+        for (var i = 0;i<divs.length;i++){
+            var div = divs[i];
+            console.dir(div);
+        }
+
+        //第三种
+        var radios = document.getElementsByName('sex');
+        console.log(radios);  //NodeList类型 节点的集合
+
+        //第四种
+        // IE9以后才支持的 兼容性问题
+        var div0 = document.getElementsByClassName('a');
+        console.log(div);   //HTMLCollection 元素的集合 伪数组
+
+        //第五种 推荐使用! IE8 以上
+        //HTML5 中新增的获取元素的方法
+        //query 查询 Selector 选择器
+        //查找一个元素，如果页面上有多个符合条件的元素，只返回第一个
+
+        var div1 = document.querySelector('.a');
+        //var div2 = document.querySelectorAll('.a');
+        console.log(div1);
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>switch</title>
+</head>
+<body>
+    <a id="link" href="#">切换图片</a>
+    <br>
+    <img  id="img" src="images/coffee.png" alt="图片" width="153" height="153">
+    
+
+
+    <script>
+        // 元素的属性 --- 包含了标签对应的属性
+        // 元素 （对象） 封装了标签对应的属性
+
+        //1 获取超链接
+        var link = document.getElementById('link');
+        var flag = 1;
+        //2 给超链接注册点击事件
+        link.onclick = function () {
+        //3 切换图片
+        var img = document.getElementById('img');
+        if (flag === 1) {
+            flag = 2;
+            img.src = 'images/twitter.jpg'
+        }else{
+            flag = 1;
+            img.src = 'images/coffee.png';
+        }
+        //4 取消a标签的默认行为
+        return false;
+        }
+    
+    </script>
+</body>
+</html>
